@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourMeal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styly.css">
+    <script type="module" src="./script/menu-html.js" defer></script>
+    <script src="./script/basket.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="./images/logo.svg" alt="logo"></a>
+            </div>
+            <div class="header">
+                <img src="./images/hamburger.svg" alt="hamburger">
+                <div class="header__text">
+                    <h1>Только самые <span>сочные бургеры!</span></h1>
+                    <p>Бесплатная доставка от 599₽</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav>
+                <button class="active"><img src="./images/cheeseburger.svg" alt="Бургеры">Бургеры</button>
+                <button><img src="./images/onion.svg" alt="Закуски">Закуски</button>
+                <button><img src="./images/hotdog.svg" alt="Хот-доги">Хот-доги</button>
+            </nav>
+            <section class="basket-and-menu">
+                <div class="basket">
+                    <div class="basket__top">
+                        <h2>Корзина</h2>
+                        <div>0</div>
+                    </div>
+                    <div class="basket__center">
+                        <!-- Тут пока пусто :( -->
+                        <div class="basket__center-order">
+                            <div class="basket__center-order-name">
+                                <img src="./images/menu/burger1.jpg" alt="Мясная бомба">
+                                <div>
+                                    <h3>Мясная бомба</h3>
+                                    <p class="basket__center-order-name-weight">520г</p>
+                                    <p class="basket__center-order-name-price">689₽</p>
+                                </div>
+                            </div>
+                            <div class="basket__center-order-number">
+                                <div class="basket__center-order-number-minus">-</div>
+                                <div class="basket__center-order-number-num">1</div>
+                                <div class="basket__center-order-number-plus">+</div>
+                            </div>
+                        </div>
+                        <div class="basket__center-order">
+                            <div class="basket__center-order-name">
+                                <img src="./images/menu/burger1.jpg" alt="Мясная бомба">
+                                <div>
+                                    <h3>Мясная бомба</h3>
+                                    <p class="basket__center-order-name-weight">520г</p>
+                                    <p class="basket__center-order-name-price">689₽</p>
+                                </div>
+                            </div>
+                            <div class="basket__center-order-number">
+                                <div class="basket__center-order-number-minus">-</div>
+                                <div class="basket__center-order-number-num">1</div>
+                                <div class="basket__center-order-number-plus">+</div>
+                            </div>
+                        </div>
+                        <div class="basket__center-order">
+                            <div class="basket__center-order-name">
+                                <img src="./images/menu/burger1.jpg" alt="Мясная бомба">
+                                <div>
+                                    <h3>Мясная бомба</h3>
+                                    <p class="basket__center-order-name-weight">520г</p>
+                                    <p class="basket__center-order-name-price">689₽</p>
+                                </div>
+                            </div>
+                            <div class="basket__center-order-number">
+                                <div class="basket__center-order-number-minus">-</div>
+                                <div class="basket__center-order-number-num">1</div>
+                                <div class="basket__center-order-number-plus">+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket__bottom">
+                        <div class="basket__bottom-sum">
+                            <h2>Итого:</h2>
+                            <div>0 ₽</div>
+                        </div>
+                        <button class="acive">Оформить заказ</button>
+                        <p><img src="./images/delivery.svg" alt="delivery">Бесплатная доставка</p>
+                    </div>
+                </div>
+                <div class="menu">
+                    <h2>Бургеры</h2>
+                    <div class="menu__dishes">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer__logo">
+                    <img src="./images/logo-footer.svg" alt="logo">
+                    <img src="./images/logo2-footer.svg" alt="logo">
+                </div>
+                <div class="footer__contacts">
+                    <div>
+                        <h3>Номер для заказа</h3>
+                        <div class="footer__contacts-tell">
+                            <img src="./images/tell.svg" alt="tell">
+                            <a href="tel:+79308333811">+7(930)833-38-11</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Мы в соцсетях</h3>
+                        <a href="#"><img src="./images/vk.svg" alt="vk"></a>
+                        <a href="#"><img src="./images/telegram.svg" alt="telegram"></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#">© YouMeal, 2022</a>
+        </div>
+    </footer>
+</body>
+
+</html>

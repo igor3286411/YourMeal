@@ -1,0 +1,299 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1290px;
+  margin: auto;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #F9F9F9;
+}
+
+header {
+  background-image: url("../images/fon.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  padding: 21px 0 72px;
+}
+header .logo {
+  display: flex;
+  justify-content: center;
+}
+header .header {
+  display: flex;
+  justify-content: center;
+  gap: 58px;
+  margin-top: 49px;
+}
+header .header h1 {
+  max-width: 437px;
+  margin: 19px 0 52px;
+  color: #FFF;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 120%;
+}
+header .header h1 span {
+  color: #FF5C00;
+}
+header .header p {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+main nav {
+  display: flex;
+  padding: 40px 0 50px;
+  gap: 24px;
+}
+main nav button {
+  background: #FFF;
+  border-radius: 50px;
+  display: flex;
+  padding: 8px 14px;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+main nav button:hover {
+  background: rgba(200, 199, 199, 0.8196078431);
+  cursor: pointer;
+  transition: 0.9s;
+}
+main nav button.active {
+  background: #FFAB08;
+}
+
+.basket-and-menu {
+  display: flex;
+  gap: 30px;
+  padding-bottom: 100px;
+}
+.basket-and-menu .basket {
+  margin-top: 72px;
+  padding: 24px 16px;
+  max-width: 300px;
+  border-radius: 18px;
+}
+.basket-and-menu .basket__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.basket-and-menu .basket__top h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 100%;
+}
+.basket-and-menu .basket__top div {
+  border-radius: 6px;
+  background: #F2F2F3;
+  width: 41px;
+  height: 20px;
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basket-and-menu .basket__center-order {
+  padding: 15px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.basket-and-menu .basket__center-order-name {
+  display: flex;
+}
+.basket-and-menu .basket__center-order-name img {
+  width: 64px;
+  border-radius: 8px;
+  margin-right: 6px;
+}
+.basket-and-menu .basket__center-order-name h3 {
+  font-size: 12px;
+  font-weight: 400;
+}
+.basket-and-menu .basket__center-order-name p {
+  font-size: 12px;
+  font-weight: 400;
+}
+.basket-and-menu .basket__center-order-name-weight {
+  margin: 1px 0 6px;
+  color: #B1B1B1;
+}
+.basket-and-menu .basket__center-order-number {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  background: #F2F2F3;
+}
+.basket-and-menu .basket__center-order-number div {
+  height: 40px;
+  width: 27px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basket-and-menu .basket__center-order-number-minus {
+  cursor: pointer;
+  border-radius: 12px 0 0 12px;
+}
+.basket-and-menu .basket__center-order-number-minus:hover {
+  background: rgba(200, 199, 199, 0.8196078431);
+  transition: 0.3s;
+}
+.basket-and-menu .basket__center-order-number-plus {
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+}
+.basket-and-menu .basket__center-order-number-plus:hover {
+  background: rgba(200, 199, 199, 0.8196078431);
+  transition: 0.3s;
+}
+.basket-and-menu .basket__bottom-sum {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 16px 0 24px;
+}
+.basket-and-menu .basket__bottom button {
+  border-radius: 12px;
+  background: #F9F9F9;
+  border: none;
+  display: flex;
+  width: 268px;
+  height: 40px;
+  padding: 11px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #ACACAC;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+}
+.basket-and-menu .basket__bottom button.acive {
+  cursor: pointer;
+  background: #FF7020;
+  color: #FFF;
+}
+.basket-and-menu .basket__bottom button.acive:hover {
+  background: #F86310;
+}
+.basket-and-menu .basket__bottom p {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.basket-and-menu .menu h2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+.basket-and-menu .menu__dishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+.basket-and-menu .menu__dishes-card {
+  padding: 12px;
+}
+.basket-and-menu .menu__dishes-card h2 {
+  margin: 16px 0 8px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 100%;
+}
+.basket-and-menu .menu__dishes-card h3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+}
+.basket-and-menu .menu__dishes-card p {
+  margin: 29px 0 8px;
+  color: #B1B1B1;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 130%;
+}
+.basket-and-menu .menu__dishes-card button {
+  display: flex;
+  width: 276px;
+  height: 40px;
+  padding: 11px 92px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: #F2F2F3;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  cursor: pointer;
+}
+.basket-and-menu .menu__dishes-card button:hover {
+  border-radius: 12px;
+  background: #FFAB08;
+  color: #FFF;
+  transition: 0.2s;
+}
+
+footer {
+  background: #FFF;
+  padding: 46px 0 40px;
+}
+footer a {
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+}
+footer .footer {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer__logo {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+footer .footer__contacts {
+  display: flex;
+  gap: 126px;
+}
+footer .footer__contacts h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 23px;
+}
+footer .footer__contacts a {
+  margin-right: 16px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+}
+footer .footer__contacts-tell {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}/*# sourceMappingURL=styly.css.map */
