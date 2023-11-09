@@ -86,8 +86,10 @@ main {
     display: flex;
     gap: 30px;
     padding-bottom: 100px;
+    background: #F9F9F9;
 
     .basket {
+        background: #FFF;
         margin-top: 72px;
         padding: 24px 16px;
         max-width: 300px;
@@ -158,13 +160,27 @@ main {
                     border-radius: 12px;
                     background: #F2F2F3;
 
-                    div {
+                    button {
                         height: 40px;
                         width: 27px;
                         text-align: center;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        border: none;
+                        font-size: 16px;
+                    }
+                    input{
+                        height: 40px;
+                        width: 27px;
+                        text-align: center;
+                        border: none;
+                        font-size: 16px;
+                        background: #F2F2F3;
+                        outline:none;
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                          }
                     }
 
                     &-minus {
@@ -239,6 +255,7 @@ main {
     }
 
     .menu {
+        background: #F9F9F9;
         h2 {
             font-size: 40px;
             font-weight: 600;
@@ -249,9 +266,9 @@ main {
         &__dishes {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            background: #FFF;
+            gap: 30px;
             row-gap: 30px;
-
 
             &-card {
                 padding: 12px;

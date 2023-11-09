@@ -75,8 +75,10 @@ main nav button.active {
   display: flex;
   gap: 30px;
   padding-bottom: 100px;
+  background: #F9F9F9;
 }
 .basket-and-menu .basket {
+  background: #FFF;
   margin-top: 72px;
   padding: 24px 16px;
   max-width: 300px;
@@ -138,13 +140,27 @@ main nav button.active {
   border-radius: 12px;
   background: #F2F2F3;
 }
-.basket-and-menu .basket__center-order-number div {
+.basket-and-menu .basket__center-order-number button {
   height: 40px;
   width: 27px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  font-size: 16px;
+}
+.basket-and-menu .basket__center-order-number input {
+  height: 40px;
+  width: 27px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  background: #F2F2F3;
+  outline: none;
+}
+.basket-and-menu .basket__center-order-number input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 .basket-and-menu .basket__center-order-number-minus {
   cursor: pointer;
@@ -200,6 +216,9 @@ main nav button.active {
   align-items: center;
   gap: 8px;
 }
+.basket-and-menu .menu {
+  background: #F9F9F9;
+}
 .basket-and-menu .menu h2 {
   font-size: 40px;
   font-weight: 600;
@@ -209,7 +228,8 @@ main nav button.active {
 .basket-and-menu .menu__dishes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  background: #FFF;
+  gap: 30px;
   row-gap: 30px;
 }
 .basket-and-menu .menu__dishes-card {
