@@ -21,7 +21,7 @@ const minusFunction = id => {
     basketMenu.forEach((item, i) => {
         if (item.id === id && item.order.quantity - 1 === 0) {
             basketMenu.splice([i], 1)
-            if (basketMenu.length === 0){
+            if (basketMenu.length === 0) {
                 basketTextNoneOrder.textContent = 'Тут пока пусто :('
             }
             localStorage.setItem('basketOrder', JSON.stringify(basketMenu));
@@ -30,11 +30,15 @@ const minusFunction = id => {
         }
 
     })
-    console.log(basketMenu);
 }
 
+
 const basketMenuPush = (name, price, weight, img, id, quantity) => {
-    basketMenu.push({ id: id, order: { name, price, weight, img, quantity } })
+    const basketOrderId = basket.querySelector(`[data-order-id="${id}"]`)
+    if(!basketOrderId){
+        basketMenu.push({ id: id, order: { name, price, weight, img, quantity } })
+        renderOrderInBasket(name, price, weight, img, id, quantity)
+    }
 }
 
 const renderOrderInBasket = (name, price, weight, img, id, quantity) => {
@@ -75,7 +79,7 @@ menu.addEventListener('click', (event) => {
     if (click.matches('button')) {
         basketTextNoneOrder.textContent = ''
         basketMenuPush(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), 1)
-        renderOrderInBasket(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), 1)
+        // renderOrderInBasket(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), 1)
         quantityAndSumPrice(basketMenu)
         localStorage.setItem('basketOrder', JSON.stringify(basketMenu));
     }
@@ -100,10 +104,11 @@ basket.addEventListener('click', (event) => {
 
 if (localStorage.getItem('basketOrder')) {
     basketMenu = JSON.parse(localStorage.getItem('basketOrder'));
-    if (basketMenu.length > 0){
+    if (basketMenu.length > 0) {
         basketTextNoneOrder.textContent = ''
     }
     console.log(basketMenu);
     basketMenu.forEach(item => renderOrderInBasket(item.order.name, item.order.price, item.order.weight, item.order.img, item.id, item.order.quantity))
     quantityAndSumPrice(basketMenu)
 }
+
