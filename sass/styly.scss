@@ -7,6 +7,10 @@
 .container {
     max-width: 1290px;
     margin: auto;
+
+    @media(max-width:1350px) {
+        max-width: 95%;
+    }
 }
 
 body {
@@ -31,6 +35,17 @@ header {
         justify-content: center;
         gap: 58px;
         margin-top: 49px;
+        @media(max-width:650px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            @media(max-width:900px) {
+                width: 227px;
+                height: 229px;
+            }
+        }
 
         h1 {
             max-width: 437px;
@@ -39,6 +54,11 @@ header {
             font-size: 50px;
             font-weight: 800;
             line-height: 120%;
+
+            @media(max-width:900px) {
+                max-width: 325px;
+                font-size: 36px;
+            }
 
             span {
                 color: #FF5C00;
@@ -88,6 +108,10 @@ main {
     padding-bottom: 100px;
     background: #F9F9F9;
 
+    @media(max-width:1015px) {
+        flex-direction: column;
+    }
+
     .basket {
         background: #FFF;
         margin-top: 72px;
@@ -95,10 +119,20 @@ main {
         max-width: 300px;
         border-radius: 18px;
 
+        @media(max-width:980px) {
+            margin-top: 0;
+        }
+
+        .basket__center-text {
+            padding-top: 12px;
+            @media(max-width:1015px) {
+                display: none;
+            }
+        }
+
         &__top {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 12px;
 
             h2 {
                 font-size: 24px;
@@ -122,6 +156,12 @@ main {
         }
 
         &__center {
+            margin-top: 12px;
+
+            @media(max-width:1015px) {
+                display: none;
+            }
+
             &-order {
                 padding: 15px 0 14px;
                 display: flex;
@@ -206,6 +246,10 @@ main {
         }
 
         &__bottom {
+            @media(max-width:1015px) {
+                display: none;
+            }
+
             &-sum {
                 display: flex;
                 justify-content: space-between;
@@ -215,7 +259,7 @@ main {
                 margin: 16px 0 24px;
             }
 
-            button {
+            .basket__bottom-sum-button {
                 border-radius: 12px;
                 background: #F9F9F9;
                 border: none;
@@ -232,10 +276,25 @@ main {
                 line-height: 100%;
             }
 
-            button.active {
+            .basket__bottom-sum-button-active {
+                border-radius: 12px;
+                background: #F9F9F9;
+                border: none;
+                display: flex;
+                width: 268px;
+                height: 40px;
+                padding: 11px 32px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                color: #ACACAC;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 100%;
                 cursor: pointer;
                 background: #FF7020;
                 color: #FFF;
+                display: none;
 
                 &:hover {
                     background: #F86310;
@@ -269,14 +328,33 @@ main {
             gap: 30px;
             row-gap: 30px;
 
+            @media(max-width:1350px) {
+                gap: 30px;
+                justify-content: flex-start;
+            }
+
             &-card {
                 padding: 12px;
+
+                @media(max-width:1015px) {
+                    padding: 4px;
+                }
+
+                img {
+                    @media(max-width:1015px) {
+                        width: 137px;
+                    }
+                }
 
                 h2 {
                     margin: 16px 0 8px;
                     font-size: 24px;
                     font-weight: 600;
                     line-height: 100%;
+
+                    @media(max-width:1015px) {
+                        font-size: 12px;
+                    }
                 }
 
                 h3 {
@@ -314,6 +392,13 @@ main {
                         background: #FFAB08;
                         color: #FFF;
                         transition: 0.2s;
+                    }
+
+                    @media(max-width:1015px) {
+                        border-radius: 8px;
+                        width: 137px;
+                        height: 30px;
+                        padding: 0;
                     }
                 }
             }
@@ -399,7 +484,8 @@ main {
                 background: #FFF;
             }
         }
-        &-pickup.deliverytis{
+
+        &-pickup.deliverytis {
             display: none;
         }
 
@@ -410,7 +496,8 @@ main {
             row-gap: 12px;
             font-size: 14px;
             font-weight: 400;
-            label{
+
+            label {
                 margin-left: 5px;
                 display: flex;
                 cursor: pointer;
@@ -475,15 +562,28 @@ footer {
         display: flex;
         justify-content: space-between;
 
+        @media(max-width:900px) {
+            flex-direction: column;
+        }
+
         &__logo {
             display: flex;
             gap: 9px;
             align-items: center;
+
+            @media(max-width:900px) {
+                margin-bottom: 33px;
+            }
         }
 
         &__contacts {
             display: flex;
             gap: 126px;
+            @media(max-width:530px) {
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 20px;
+            }
 
             h3 {
                 font-size: 24px;

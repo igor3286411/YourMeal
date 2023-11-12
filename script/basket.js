@@ -3,7 +3,9 @@ const basket = document.querySelector('.basket__center')
 const basketTextNoneOrder = document.querySelector('.basket__center-text')
 const basketQuantity = document.querySelector('.basket__top div')
 const basketSumPrice = document.querySelector('.basket__bottom-sum div')
-const buttonBuy = document.querySelector('.basket__bottom button')
+const buttonBuy = document.querySelector('.basket__bottom .basket__bottom-sum-button')
+const buttonBuyActive = document.querySelector('.basket__bottom-sum-button-active')
+
 
 
 let basketMenu = []
@@ -24,7 +26,8 @@ const minusFunction = id => {
             basketMenu.splice([i], 1)
             if (basketMenu.length === 0) {
                 basketTextNoneOrder.textContent = 'Тут пока пусто :('
-                buttonBuy.classList.remove('active')
+                buttonBuy.style.display = 'block'
+                buttonBuyActive.style.display = 'none'
             }
             localStorage.setItem('basketOrder', JSON.stringify(basketMenu));
         } else if (item.id === id) {
@@ -83,7 +86,8 @@ menu.addEventListener('click', (event) => {
         basketMenuPush(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), 1)
         // renderOrderInBasket(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), 1)
         quantityAndSumPrice(basketMenu)
-        buttonBuy.classList.add('active')
+        buttonBuy.style.display = 'none'
+        buttonBuyActive.style.display = 'block'
         localStorage.setItem('basketOrder', JSON.stringify(basketMenu));
     }
 })
@@ -109,9 +113,9 @@ if (localStorage.getItem('basketOrder')) {
     basketMenu = JSON.parse(localStorage.getItem('basketOrder'));
     if (basketMenu.length > 0) {
         basketTextNoneOrder.textContent = ''
-        buttonBuy.classList.add('active')
+        buttonBuy.style.display = 'none'
+        buttonBuyActive.style.display = 'block'
     }
-    console.log(basketMenu);
     basketMenu.forEach(item => renderOrderInBasket(item.order.name, item.order.price, item.order.weight, item.order.img, item.id, item.order.quantity))
     quantityAndSumPrice(basketMenu)
 }
