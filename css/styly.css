@@ -199,12 +199,12 @@ main nav button.active {
   font-weight: 400;
   line-height: 100%;
 }
-.basket-and-menu .basket__bottom button.acive {
+.basket-and-menu .basket__bottom button.active {
   cursor: pointer;
   background: #FF7020;
   color: #FFF;
 }
-.basket-and-menu .basket__bottom button.acive:hover {
+.basket-and-menu .basket__bottom button.active:hover {
   background: #F86310;
 }
 .basket-and-menu .basket__bottom p {
@@ -271,6 +271,128 @@ main nav button.active {
   background: #FFAB08;
   color: #FFF;
   transition: 0.2s;
+}
+
+.delivery-section {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  transition: 0.8s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.delivery-section.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.delivery {
+  display: flex;
+  width: 684px;
+  height: 432px;
+  border-radius: 24px;
+  background: #F9F9F9;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.delivery__img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFAB08;
+  border-radius: 24px 0 0 24px;
+}
+.delivery__form {
+  padding: 24px;
+}
+.delivery__form-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  border: none;
+  background: #F9F9F9;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/x.svg);
+  cursor: pointer;
+}
+.delivery__form h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.delivery__form-pickup {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.delivery__form-pickup input {
+  height: 40px;
+  display: flex;
+  width: 294px;
+  padding: 12px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid #F2F2F3;
+  background: #FFF;
+}
+.delivery__form-pickup.deliverytis {
+  display: none;
+}
+.delivery__form-radio {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.delivery__form-radio label {
+  margin-left: 5px;
+  display: flex;
+  cursor: pointer;
+}
+.delivery__form-radio input {
+  cursor: pointer;
+  margin-right: 8px;
+}
+.delivery__form .delivery__form-floor {
+  display: flex;
+  gap: 8px;
+}
+.delivery__form .delivery__form-floor .delivery__form-floor-intercom {
+  width: 143px;
+}
+.delivery__form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.delivery__form form button {
+  margin-top: 30px;
+  display: flex;
+  width: 294px;
+  height: 40px;
+  padding: 11px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: #FF7020;
+  color: #FFF;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.delivery__form form button:hover {
+  background: #F86310;
 }
 
 footer {

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/styly.css">
     <script type="module" src="./script/menu-html.js" defer></script>
     <script src="./script/basket.js" defer></script>
+    <script src="./script/arrange.js" defer></script>
 </head>
 
 <body>
@@ -66,13 +67,44 @@
                             <h2>Итого:</h2>
                             <div>0 ₽</div>
                         </div>
-                        <button class="acive">Оформить заказ</button>
+                        <button>Оформить заказ</button>
                         <p><img src="./images/delivery.svg" alt="delivery">Бесплатная доставка</p>
                     </div>
                 </div>
                 <div class="menu">
                     <h2>Бургеры</h2>
                     <div class="menu__dishes">
+                    </div>
+                </div>
+            </section>
+            <section class="delivery-section">
+                <div class="delivery">
+                    <div class="delivery__img">
+                        <img src="./images/delivery2.svg" alt="delivery">
+                    </div>
+                    <div class="delivery__form">
+                        <h2>Доставка</h2>
+                        <button class="delivery__form-close"></button>
+                        <form>
+                            <div class="delivery__form-pickup">
+                                <input type="text" placeholder="Ваше имя">
+                                <input type="number" placeholder="Телефон">
+                            </div>
+                            <div class="delivery__form-radio">
+                                <label class="delivery__form-radio-pickup"><input name="pickup" type="radio"
+                                        value="pickup" checked>Самовывоз</label>
+                                <label class="delivery__form-radio-delivery"><input name="pickup" type="radio"
+                                        value="delivery">Доставка</label>
+                            </div>
+                            <div class="delivery__form-pickup deliverytis">
+                                <p><input type="text" placeholder="Улица, дом, квартира"></p>
+                                <p class="delivery__form-floor">
+                                    <input class="delivery__form-floor-intercom" type="number" placeholder="Этаж">
+                                    <input class="delivery__form-floor-intercom" type="number" placeholder="Домофон">
+                                </p>
+                            </div>
+                            <button>Оформить</button>
+                        </form>
                     </div>
                 </div>
             </section>
