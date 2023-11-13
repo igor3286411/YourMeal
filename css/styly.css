@@ -40,6 +40,7 @@ header .header {
   header .header {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 }
 @media (max-width: 900px) {
@@ -58,8 +59,19 @@ header .header h1 {
 }
 @media (max-width: 900px) {
   header .header h1 {
-    max-width: 325px;
+    max-width: 305px;
     font-size: 36px;
+  }
+}
+@media (max-width: 530px) {
+  header .header h1 {
+    margin: 0 0 20px 0;
+  }
+}
+@media (max-width: 400px) {
+  header .header h1 {
+    font-size: 27px;
+    max-width: 235px;
   }
 }
 header .header h1 span {
@@ -75,6 +87,12 @@ main nav {
   display: flex;
   padding: 40px 0 50px;
   gap: 24px;
+}
+@media (max-width: 530px) {
+  main nav {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
 main nav button {
   background: #FFF;
@@ -111,19 +129,30 @@ main nav button.active {
   padding: 24px 16px;
   max-width: 300px;
   border-radius: 18px;
+  position: relative;
+}
+@media (max-width: 1015px) {
+  .basket-and-menu .basket .basket__order {
+    padding: 0 16px 16px;
+    background: #FFF;
+    position: absolute;
+    left: 0;
+    border-radius: 18px;
+    display: none;
+  }
 }
 @media (max-width: 980px) {
   .basket-and-menu .basket {
     margin-top: 0;
   }
 }
+@media (max-width: 530px) {
+  .basket-and-menu .basket {
+    max-width: 100%;
+  }
+}
 .basket-and-menu .basket .basket__center-text {
   padding-top: 12px;
-}
-@media (max-width: 1015px) {
-  .basket-and-menu .basket .basket__center-text {
-    display: none;
-  }
 }
 .basket-and-menu .basket__top {
   display: flex;
@@ -149,11 +178,6 @@ main nav button.active {
 }
 .basket-and-menu .basket__center {
   margin-top: 12px;
-}
-@media (max-width: 1015px) {
-  .basket-and-menu .basket__center {
-    display: none;
-  }
 }
 .basket-and-menu .basket__center-order {
   padding: 15px 0 14px;
@@ -222,11 +246,6 @@ main nav button.active {
 .basket-and-menu .basket__center-order-number-plus:hover {
   background: rgba(200, 199, 199, 0.8196078431);
   transition: 0.3s;
-}
-@media (max-width: 1015px) {
-  .basket-and-menu .basket__bottom {
-    display: none;
-  }
 }
 .basket-and-menu .basket__bottom-sum {
   display: flex;
@@ -297,10 +316,15 @@ main nav button.active {
   gap: 30px;
   row-gap: 30px;
 }
-@media (max-width: 1350px) {
+@media (max-width: 1360px) {
   .basket-and-menu .menu__dishes {
-    gap: 30px;
+    gap: 20px;
     justify-content: flex-start;
+  }
+}
+@media (max-width: 340px) {
+  .basket-and-menu .menu__dishes {
+    gap: 8px;
   }
 }
 .basket-and-menu .menu__dishes-card {

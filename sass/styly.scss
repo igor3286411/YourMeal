@@ -35,9 +35,11 @@ header {
         justify-content: center;
         gap: 58px;
         margin-top: 49px;
+
         @media(max-width:650px) {
             flex-direction: column;
             align-items: center;
+            gap: 30px;
         }
 
         img {
@@ -56,8 +58,17 @@ header {
             line-height: 120%;
 
             @media(max-width:900px) {
-                max-width: 325px;
+                max-width: 305px;
                 font-size: 36px;
+            }
+
+            @media(max-width:530px) {
+                margin: 0 0 20px 0;
+            }
+
+            @media(max-width:400px) {
+                font-size: 27px;
+                max-width: 235px;
             }
 
             span {
@@ -78,6 +89,11 @@ main {
         display: flex;
         padding: 40px 0 50px;
         gap: 24px;
+
+        @media(max-width:530px) {
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
         button {
             background: #FFF;
@@ -118,16 +134,32 @@ main {
         padding: 24px 16px;
         max-width: 300px;
         border-radius: 18px;
+        position: relative;
+
+        .basket__order {
+            @media(max-width:1015px) {
+                padding: 0 16px 16px;
+                background: #FFF;
+                position: absolute;
+                left: 0;
+                border-radius: 18px;
+                display: none;
+            }
+        }
 
         @media(max-width:980px) {
             margin-top: 0;
         }
 
+        @media(max-width:530px) {
+            max-width: 100%;
+        }
+
         .basket__center-text {
             padding-top: 12px;
-            @media(max-width:1015px) {
-                display: none;
-            }
+            // @media(max-width:1015px) {
+            //     display: none;
+            // }
         }
 
         &__top {
@@ -158,9 +190,9 @@ main {
         &__center {
             margin-top: 12px;
 
-            @media(max-width:1015px) {
-                display: none;
-            }
+            // @media(max-width:1015px) {
+            //     display: none;
+            // }
 
             &-order {
                 padding: 15px 0 14px;
@@ -246,9 +278,9 @@ main {
         }
 
         &__bottom {
-            @media(max-width:1015px) {
-                display: none;
-            }
+            // @media(max-width:1015px) {
+            //     display: none;
+            // }
 
             &-sum {
                 display: flex;
@@ -328,9 +360,13 @@ main {
             gap: 30px;
             row-gap: 30px;
 
-            @media(max-width:1350px) {
-                gap: 30px;
+            @media(max-width:1360px) {
+                gap: 20px;
                 justify-content: flex-start;
+            }
+
+            @media(max-width:340px) {
+                gap: 8px;
             }
 
             &-card {
@@ -579,6 +615,7 @@ footer {
         &__contacts {
             display: flex;
             gap: 126px;
+
             @media(max-width:530px) {
                 flex-direction: column;
                 gap: 40px;
