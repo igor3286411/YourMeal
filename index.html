@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/styly.css">
     <script type="module" src="./script/menu-html.js" defer></script>
     <script src="./script/basket.js" defer></script>
-    <script src="./script/arrange.js" defer></script>
+    <script src="./script/buy.js" defer></script>
 </head>
 
 <body>
@@ -40,7 +40,8 @@
                 <div class="basket">
                     <div class="basket__top">
                         <h2>Корзина</h2>
-                        <div>0</div>
+                        <div class="basket__top-num">0</div>
+                        <button class="basket__top-button-close"></button>
                     </div>
                     <div class="basket__order">
                         <div class="basket__center-text">
@@ -79,11 +80,12 @@
                                 <input type="number" placeholder="Телефон">
                             </div>
                             <div class="delivery__form-radio">
-                                <label class="delivery__form-radio-pickup"><input class="delivery__form-radio-pickup"
-                                        name="pickup" type="radio" value="pickup" checked>Самовывоз</label>
+                                <label class="delivery__form-radio-pickup">
+                                    <input class="delivery__form-radio-pickup" name="pickup" type="radio"
+                                        checked>Самовывоз</label>
                                 <label class="delivery__form-radio-delivery"><input
-                                        class="delivery__form-radio-delivery" name="pickup" type="radio"
-                                        value="delivery">Доставка</label>
+                                        class="delivery__form-radio-delivery" name="pickup"
+                                        type="radio">Доставка</label>
                             </div>
                             <div class="delivery__form-pickup deliverytis">
                                 <p><input type="text" placeholder="Улица, дом, квартира"></p>

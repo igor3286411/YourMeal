@@ -131,21 +131,28 @@ main {
     .basket {
         background: #FFF;
         margin-top: 72px;
-        padding: 24px 16px;
         max-width: 300px;
         border-radius: 18px;
         position: relative;
 
         .basket__order {
+            padding: 0 16px 24px;
+
             @media(max-width:1015px) {
                 padding: 0 16px 16px;
                 background: #FFF;
                 position: absolute;
                 left: 0;
+                top: 56px;
                 border-radius: 18px;
+                // border-radius: 0 0 18px 18px;
                 display: none;
             }
         }
+
+        // @media(max-width:1015px) {
+        //     border-radius: 18px 18px 0 0;
+        // }
 
         @media(max-width:980px) {
             margin-top: 0;
@@ -155,16 +162,11 @@ main {
             max-width: 100%;
         }
 
-        .basket__center-text {
-            padding-top: 12px;
-            // @media(max-width:1015px) {
-            //     display: none;
-            // }
-        }
-
         &__top {
+            padding: 16px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
 
             h2 {
                 font-size: 24px;
@@ -184,15 +186,32 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                // margin-right: 20px;
+            }
+
+            &-button-close {
+                display: none;
+                position: absolute;
+                right: 10px;
+                top: 13px;
+                border: none;
+                background: #FFF;
+                width: 24px;
+                height: 24px;
+                background-image: url(../images/x.svg);
+                cursor: pointer;
+                &:hover{
+                    background-image: url(../images/x-close.svg);
+                }
+            }
+
+            @media(max-width:1015px) {
+                cursor: pointer;
             }
         }
 
         &__center {
             margin-top: 12px;
-
-            // @media(max-width:1015px) {
-            //     display: none;
-            // }
 
             &-order {
                 padding: 15px 0 14px;
@@ -278,9 +297,6 @@ main {
         }
 
         &__bottom {
-            // @media(max-width:1015px) {
-            //     display: none;
-            // }
 
             &-sum {
                 display: flex;
@@ -495,6 +511,9 @@ main {
             height: 24px;
             background-image: url(../images/x.svg);
             cursor: pointer;
+            &:hover{
+                background-image: url(../images/x-close.svg);
+            }
         }
 
         h2 {

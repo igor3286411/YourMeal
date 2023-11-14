@@ -126,10 +126,12 @@ main nav button.active {
 .basket-and-menu .basket {
   background: #FFF;
   margin-top: 72px;
-  padding: 24px 16px;
   max-width: 300px;
   border-radius: 18px;
   position: relative;
+}
+.basket-and-menu .basket .basket__order {
+  padding: 0 16px 24px;
 }
 @media (max-width: 1015px) {
   .basket-and-menu .basket .basket__order {
@@ -137,6 +139,7 @@ main nav button.active {
     background: #FFF;
     position: absolute;
     left: 0;
+    top: 56px;
     border-radius: 18px;
     display: none;
   }
@@ -151,12 +154,11 @@ main nav button.active {
     max-width: 100%;
   }
 }
-.basket-and-menu .basket .basket__center-text {
-  padding-top: 12px;
-}
 .basket-and-menu .basket__top {
+  padding: 16px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .basket-and-menu .basket__top h2 {
   font-size: 24px;
@@ -175,6 +177,26 @@ main nav button.active {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.basket-and-menu .basket__top-button-close {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  border: none;
+  background: #FFF;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/x.svg);
+  cursor: pointer;
+}
+.basket-and-menu .basket__top-button-close:hover {
+  background-image: url(../images/x-close.svg);
+}
+@media (max-width: 1015px) {
+  .basket-and-menu .basket__top {
+    cursor: pointer;
+  }
 }
 .basket-and-menu .basket__center {
   margin-top: 12px;
@@ -443,6 +465,9 @@ main nav button.active {
   height: 24px;
   background-image: url(../images/x.svg);
   cursor: pointer;
+}
+.delivery__form-close:hover {
+  background-image: url(../images/x-close.svg);
 }
 .delivery__form h2 {
   font-size: 24px;

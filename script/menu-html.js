@@ -32,18 +32,18 @@ nav.addEventListener('click', (event) => {
     if (click === buttonMenu[0]) {
         nameMenu.textContent = 'Бургеры'
         menu.textContent = ''
-        hamburgers.forEach((item, i) => {
+        hamburgers.forEach((item) => {
             renderDish(item.name, item.price, item.weight, item.src, item.article)
         })
     }
     if (click === buttonMenu[1]) {
         nameMenu.textContent = 'Закуски'
         menu.textContent = ''
-        snacks.forEach((item, i) => renderDish(item.name, item.price, item.weight, item.src, item.article))
+        snacks.forEach((item) => renderDish(item.name, item.price, item.weight, item.src, item.article))
     }
     if (click === buttonMenu[2]) {
         nameMenu.textContent = 'Хот-доги'
         menu.textContent = ''
-        hotDogs.forEach((item, i) => renderDish(item.name, item.price, item.weight, item.src, item.article))
+        hotDogs.forEach((item) => renderDish(item.name, item.price, item.weight, item.src, item.article))
     }
 })
