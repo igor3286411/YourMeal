@@ -8,6 +8,7 @@ const buttonBuyActive = document.querySelector('.basket__bottom-sum-button-activ
 const basketOrderMobile = document.querySelector('.basket__order')
 const basketMobile = document.querySelector('.basket__top')
 const basketCloseMobile = document.querySelector('.basket__top-button-close')
+const basketMobileAdaptiv = document.querySelector('.basket')
 
 let basketMenu = []
 
@@ -107,23 +108,23 @@ basket.addEventListener('click', (event) => {
     }
 })
 
-const openAndCloseMobileOrder = (disley, px) => {
+const openAndCloseMobileOrder = (disley, px, borderRadius1, borderRadius2) => {
     basketOrderMobile.style.display = `${disley}`
     basketCloseMobile.style.display = `${disley}`
     basketQuantity.style.marginRight = `${px}px`
+    basketOrderMobile.style.borderRadius = borderRadius1
+    basketMobileAdaptiv.style.borderRadius = borderRadius2
 }
 
 
 if (window.innerWidth <= 1014) {
     window.addEventListener('click', (e) => {
-        console.log(e.target);
         if (e.target.closest('.basket__top')) {
-            openAndCloseMobileOrder('block', 20)
+            openAndCloseMobileOrder('block', 20, '0 0 18px 18px', '18px 18px 0 0')
         }
         if (e.target === basketCloseMobile) {
-            openAndCloseMobileOrder('none', 0)
+            openAndCloseMobileOrder('none', 0, '18px', '18px')
         }
-
     })
 }
 

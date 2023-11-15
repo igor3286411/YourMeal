@@ -70,21 +70,21 @@ const snacks = [
 
 const hotDogs = [
     {
-        name: 'Домашний хот-дог',
+        name: 'Домашний',
         price: 290,
         weight: 250,
         src: './images/menu/hotDog1.jpg',
         article: 301
     },
     {
-        name: 'Жгучий хот-дог',
+        name: 'Жгучий',
         price: 239,
         weight: 245,
         src: './images/menu/hotDog2.jpg',
         article: 302
     },
     {
-        name: 'Классический хот-дог',
+        name: 'Классический',
         price: 220,
         weight: 215,
         src: './images/menu/hotDog3.jpg',
