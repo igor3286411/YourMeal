@@ -417,6 +417,134 @@ main nav button.active {
   }
 }
 
+.detailed {
+  display: none;
+  padding: 24px;
+  max-width: 684px;
+  border-radius: 24px;
+  background: #FFF;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.detailed-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  border: none;
+  background: #FFF;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/x.svg);
+  cursor: pointer;
+}
+.detailed-close:hover {
+  background-image: url(../images/x-close.svg);
+}
+.detailed h2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 120%;
+}
+.detailed__flex {
+  margin: 24px 0 40px;
+  display: flex;
+  gap: 16px;
+}
+.detailed__flex h3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  margin-bottom: 10px;
+}
+.detailed__flex h4 {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+}
+.detailed__flex p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 130%;
+}
+.detailed__flex-right-composition-weight {
+  color: #B1B1B1;
+  margin-top: 4px;
+}
+.detailed__add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detailed__add-price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 130%;
+}
+.detailed__add-left {
+  display: flex;
+  gap: 16px;
+}
+.detailed__add-left-add {
+  border: none;
+  width: 276px;
+  height: 40px;
+  padding: 11px 32px;
+  border-radius: 12px;
+  background: #FF7020;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.detailed__add-left-add:hover {
+  background: #FFAB08;
+  transition: 0.2s;
+}
+.detailed__add-left-number {
+  display: flex;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  background: #F2F2F3;
+}
+.detailed__add-left-number button {
+  height: 40px;
+  width: 27px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 16px;
+}
+.detailed__add-left-number div {
+  height: 40px;
+  width: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background: #F2F2F3;
+}
+.detailed__add-left-number-minus {
+  cursor: pointer;
+  border-radius: 12px 0 0 12px;
+}
+.detailed__add-left-number-minus:hover {
+  background: rgba(200, 199, 199, 0.8196078431);
+  transition: 0.3s;
+}
+.detailed__add-left-number-plus {
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+}
+.detailed__add-left-number-plus:hover {
+  background: rgba(200, 199, 199, 0.8196078431);
+  transition: 0.3s;
+}
+
 .delivery-section {
   position: fixed;
   width: 100%;
