@@ -10,9 +10,6 @@ import {
     menuOrder
 } from './menu.js';
 
-console.log(menuOrder);
-
-
 const renderDish = (name, price, weight, img, id) => {
     menu.insertAdjacentHTML('beforeend', `
     <div class="menu__dishes-card">
@@ -28,7 +25,6 @@ const renderDish = (name, price, weight, img, id) => {
 for (let key in menuOrder.hamburgers) {
     renderDish(menuOrder.hamburgers[key].name, menuOrder.hamburgers[key].price, menuOrder.hamburgers[key].weight, menuOrder.hamburgers[key].src, menuOrder.hamburgers[key].article)
 }
-
 
 nav.addEventListener('click', (event) => {
     const click = event.target
