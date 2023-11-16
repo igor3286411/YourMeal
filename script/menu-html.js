@@ -22,6 +22,16 @@ const renderDish = (name, price, weight, img, id) => {
     `)
 }
 
+const acticeButton = (button, nameMenuAttributRu, nameMenuAttribut) => {
+    buttonMenu.forEach(item => item.classList.remove('active'))
+    button.classList.add('active')
+    menu.textContent = ''
+    nameMenu.textContent = nameMenuAttributRu
+    for (let key in menuOrder[nameMenuAttribut]) {
+        renderDish(menuOrder[nameMenuAttribut][key].name, menuOrder[nameMenuAttribut][key].price, menuOrder[nameMenuAttribut][key].weight, menuOrder[nameMenuAttribut][key].src, menuOrder[nameMenuAttribut][key].article)
+    }
+}
+
 for (let key in menuOrder.hamburgers) {
     renderDish(menuOrder.hamburgers[key].name, menuOrder.hamburgers[key].price, menuOrder.hamburgers[key].weight, menuOrder.hamburgers[key].src, menuOrder.hamburgers[key].article)
 }
@@ -30,14 +40,10 @@ nav.addEventListener('click', (event) => {
     const click = event.target
     const nameMenuAttribut = click.getAttribute('data-name-menu')
     const nameMenuAttributRu = click.getAttribute('data-name-menu-ru')
-    if (click.matches('button')) {
-        buttonMenu.forEach(item => item.classList.remove('active'))
-        click.classList.add('active')
-        menu.textContent = ''
-    }
-    for (let key in menuOrder[nameMenuAttribut]) {
-        nameMenu.textContent = nameMenuAttributRu
-        renderDish(menuOrder[nameMenuAttribut][key].name, menuOrder[nameMenuAttribut][key].price, menuOrder[nameMenuAttribut][key].weight, menuOrder[nameMenuAttribut][key].src, menuOrder[nameMenuAttribut][key].article)
+    if (click.classList.contains("hamburgers") || click.classList.contains("snacks") || click.classList.contains("hotDogs")) {
+        acticeButton(click.parentNode, nameMenuAttributRu, nameMenuAttribut)
+    } else if (click.matches('button')) {
+        acticeButton(click, nameMenuAttributRu, nameMenuAttribut)
     }
 })
 
