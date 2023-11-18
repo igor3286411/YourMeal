@@ -10,9 +10,9 @@ import {
     menuOrder
 } from './menu.js';
 
-const renderDish = (name, price, weight, img, id) => {
+const renderDish = (name, price, weight, img, id, nameEat) => {
     menu.insertAdjacentHTML('beforeend', `
-    <div class="menu__dishes-card">
+    <div class="menu__dishes-card" data-order-id="${id}" data-name-menu="${nameEat}">
         <img src="${img}" alt="${name}">
         <h2>${price}₽</h2>
         <h3>${name}</h3>
@@ -28,12 +28,12 @@ const acticeButton = (button, nameMenuAttributRu, nameMenuAttribut) => {
     menu.textContent = ''
     nameMenu.textContent = nameMenuAttributRu
     for (let key in menuOrder[nameMenuAttribut]) {
-        renderDish(menuOrder[nameMenuAttribut][key].name, menuOrder[nameMenuAttribut][key].price, menuOrder[nameMenuAttribut][key].weight, menuOrder[nameMenuAttribut][key].src, menuOrder[nameMenuAttribut][key].article)
+        renderDish(menuOrder[nameMenuAttribut][key].name, menuOrder[nameMenuAttribut][key].price, menuOrder[nameMenuAttribut][key].weight, menuOrder[nameMenuAttribut][key].src, menuOrder[nameMenuAttribut][key].article, nameMenuAttribut)
     }
 }
 
 for (let key in menuOrder.hamburgers) {
-    renderDish(menuOrder.hamburgers[key].name, menuOrder.hamburgers[key].price, menuOrder.hamburgers[key].weight, menuOrder.hamburgers[key].src, menuOrder.hamburgers[key].article)
+    renderDish(menuOrder.hamburgers[key].name, menuOrder.hamburgers[key].price, menuOrder.hamburgers[key].weight, menuOrder.hamburgers[key].src, menuOrder.hamburgers[key].article, 'hamburgers')
 }
 
 nav.addEventListener('click', (event) => {
