@@ -1,6 +1,31 @@
 const detailedSection = document.querySelector('.detailed-section')
 import { menuOrder } from './menu.js';
-console.log(menuOrder);
+
+
+const clicksDetailed = (buttonClose, buttonAdd, minus, quantityNum, plus, priceHtml, price) => {
+    let numberQuantit = 1
+    detailedSection.addEventListener('click', (e) => {
+        const click = e.target
+        if (click === buttonClose || click === detailedSection) {
+            detailedSection.classList.remove('open')
+        } else if (click === plus) {
+            numberQuantit++;
+        } else if (click === minus && numberQuantit > 1) {
+            numberQuantit--;
+        }
+        quantityNum.textContent = numberQuantit
+        priceHtml.textContent = `${price * numberQuantit}₽`
+        if (click === buttonAdd) {
+            basketTextNoneOrder.textContent = ''
+            detailedSection.classList.remove('open')
+            basketMenuPush(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), numberQuantit)
+            quantityAndSumPrice(basketMenu)
+            buttonBuy.style.display = 'none'
+            buttonBuyActive.style.display = 'block'
+        }
+    })
+}
+
 
 const renderDetailed = (name, price, weight, img, id) => {
     detailedSection.textContent = ''
@@ -27,7 +52,7 @@ const renderDetailed = (name, price, weight, img, id) => {
             </div>
                 <div class="detailed__add">
                     <div class="detailed__add-left">
-                        <button class="detailed__add-left-add">Добавить</button>
+                        <button class="detailed__add-left-add" data-name="${name}" data-price="${price}" data-weight="${weight}" data-scr="${img}" data-scr="${img}" data-order-id="${id}">Добавить</button>
                         <div class="detailed__add-left-number">
                             <button class="detailed__add-left-number-minus" data-order-id="${id}" type="button">-</button>
                             <div class="detailed__add-left-number-num">1</div>
@@ -38,6 +63,13 @@ const renderDetailed = (name, price, weight, img, id) => {
                 </div>
             </div>
     `)
+    const detailedClose = detailedSection.querySelector('.detailed-close')
+    const buttonAdd = detailedSection.querySelector('.detailed__add-left-add')
+    const minus = detailedSection.querySelector('.detailed__add-left-number-minus')
+    const quantityNum = detailedSection.querySelector('.detailed__add-left-number-num')
+    const plus = detailedSection.querySelector('.detailed__add-left-number-plus')
+    const priceHtml = detailedSection.querySelector('.detailed__add-price')
+    clicksDetailed(detailedClose, buttonAdd, minus, quantityNum, plus, priceHtml, price);
 }
 
 const searchObjectKey = (id, keyObject) => {
