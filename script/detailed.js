@@ -1,7 +1,6 @@
 const detailedSection = document.querySelector('.detailed-section')
 import { menuOrder } from './menu.js';
 
-
 const clicksDetailed = (buttonClose, buttonAdd, minus, quantityNum, plus, priceHtml, price) => {
     let numberQuantit = 1
     detailedSection.addEventListener('click', (e) => {
@@ -27,7 +26,7 @@ const clicksDetailed = (buttonClose, buttonAdd, minus, quantityNum, plus, priceH
 }
 
 
-const renderDetailed = (name, price, weight, img, id) => {
+const renderDetailed = (name, price, weight, img, id, description, structure, calories) => {
     detailedSection.textContent = ''
     detailedSection.classList.add('open')
     detailedSection.insertAdjacentHTML('beforeend', `
@@ -37,16 +36,11 @@ const renderDetailed = (name, price, weight, img, id) => {
         <div class="detailed__flex">
             <img src="${img}" alt="${name}">
             <div class="detailed__flex-right">
-                <h3>Супер мясное наслаждение! Большая рубленая котлета из свежего говяжего мяса покорит вас
-                своей сочностью, а хрустящие листья салата добавят свежести.</h3>
+                <h3>${description}</h3>
                 <h4>Состав:</h4>
                 <div class="detailed__flex-right-composition">
-                    <p>Пшеничная булочка</p>
-                    <p>Котлета из говядины</p>
-                    <p>Красный лук</p>
-                    <p>Листья салата</p>
-                    <p>Соус горчичный</p>
-                    <p class="detailed__flex-right-composition-weight">${weight}г, ккал 430</p>
+                    ${structure}
+                    <p class="detailed__flex-right-composition-weight">${weight}г, ккал ${calories}</p>
                 </div>
             </div>
             </div>
@@ -75,7 +69,7 @@ const renderDetailed = (name, price, weight, img, id) => {
 const searchObjectKey = (id, keyObject) => {
     for (let key in menuOrder[keyObject]) {
         if (menuOrder[keyObject][key] === menuOrder[keyObject][id]) {
-            renderDetailed(menuOrder[keyObject][key].name, menuOrder[keyObject][key].price, menuOrder[keyObject][key].weight, menuOrder[keyObject][key].src, menuOrder[keyObject][key].article);
+            renderDetailed(menuOrder[keyObject][key].name, menuOrder[keyObject][key].price, menuOrder[keyObject][key].weight, menuOrder[keyObject][key].src, menuOrder[keyObject][key].article, menuOrder[keyObject][key].description, menuOrder[keyObject][key].structure, menuOrder[keyObject][key].calories);
         }
     }
 }

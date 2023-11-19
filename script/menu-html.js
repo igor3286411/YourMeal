@@ -3,12 +3,7 @@ const buttonMenu = document.querySelectorAll('main nav button')
 const menu = document.querySelector('.menu__dishes')
 const nameMenu = document.querySelector('.menu h2')
 
-import {
-    hamburgers,
-    snacks,
-    hotDogs,
-    menuOrder
-} from './menu.js';
+import {menuOrder} from './menu.js';
 
 const renderDish = (name, price, weight, img, id, nameEat) => {
     menu.insertAdjacentHTML('beforeend', `
@@ -46,31 +41,3 @@ nav.addEventListener('click', (event) => {
         acticeButton(click, nameMenuAttributRu, nameMenuAttribut)
     }
 })
-
-// hamburgers.forEach(item => renderDish(item.name, item.price, item.weight, item.src, item.article))
-
-// nav.addEventListener('click', (event) => {
-//     const click = event.target
-//     if (click.matches('button')) {
-//         buttonMenu.forEach(item => item.classList.remove('active'))
-//         click.classList.add('active')
-//     }
-//     console.log(click);
-//     if (click === buttonMenu[0]) {
-//         nameMenu.textContent = 'Бургеры'
-//         menu.textContent = ''
-//         hamburgers.forEach((item) => {
-//             renderDish(item.name, item.price, item.weight, item.src, item.article)
-//         })
-//     }
-//     if (click === buttonMenu[1]) {
-//         nameMenu.textContent = 'Закуски'
-//         menu.textContent = ''
-//         snacks.forEach((item) => renderDish(item.name, item.price, item.weight, item.src, item.article))
-//     }
-//     if (click === buttonMenu[2]) {
-//         nameMenu.textContent = 'Хот-доги'
-//         menu.textContent = ''
-//         hotDogs.forEach((item) => renderDish(item.name, item.price, item.weight, item.src, item.article))
-//     }
-// })
