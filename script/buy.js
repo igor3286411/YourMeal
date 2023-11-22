@@ -9,6 +9,8 @@ const renderSubmitForm = (name) => {
     basketTextNoneOrder.textContent = 'Тут пока пусто :('
     buttonBuy.style.display = 'block'
     buttonBuyActive.style.display = 'none'
+    basketQuantity.textContent = 0
+    basketSumPrice.textContent = `0 ₽`
     basket.textContent = ''
     localStorage.clear()
     formOrder.textContent = ''
@@ -17,12 +19,16 @@ const renderSubmitForm = (name) => {
     deliverySection.querySelector('.delivery').style.justifyContent = 'center'
     deliverySection.querySelector('.delivery').style.textAlign = 'center'
     deliveryForm.querySelector('h2').style.fontSize = '50px'
-    deliveryForm.querySelector('h2').textContent = `Спасибо ${name}. Ваш заказ принят`
+    deliveryForm.querySelector('h2').textContent = `Спасибо, ${name}. Ваш заказ принят`
 }
 
-buttonBuyActive.addEventListener('click', () => deliverySection.classList.add('open'))
+buttonBuyActive.addEventListener('click', () => {
+    document.body.style.overflowY = 'hidden'
+    deliverySection.classList.add('open')
+})
 
 formClose.addEventListener('click', () => {
+    document.body.style.overflowY = 'scroll'
     deliverySection.classList.remove('open')
 })
 

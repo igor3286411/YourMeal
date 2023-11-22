@@ -7,6 +7,7 @@ const clicksDetailed = (buttonClose, buttonAdd, minus, quantityNum, plus, priceH
         const click = e.target
         if (click === buttonClose || click === detailedSection) {
             detailedSection.classList.remove('open')
+            document.body.style.overflowY = 'scroll'
         } else if (click === plus) {
             numberQuantit++;
         } else if (click === minus && numberQuantit > 1) {
@@ -17,6 +18,7 @@ const clicksDetailed = (buttonClose, buttonAdd, minus, quantityNum, plus, priceH
         if (click === buttonAdd) {
             basketTextNoneOrder.textContent = ''
             detailedSection.classList.remove('open')
+            document.body.style.overflowY = 'scroll'
             basketMenuPush(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), numberQuantit)
             quantityAndSumPrice(basketMenu)
             buttonBuy.style.display = 'none'
@@ -29,6 +31,7 @@ const clicksDetailed = (buttonClose, buttonAdd, minus, quantityNum, plus, priceH
 const renderDetailed = (name, price, weight, img, id, description, structure, calories) => {
     detailedSection.textContent = ''
     detailedSection.classList.add('open')
+    document.body.style.overflowY = 'hidden'
     detailedSection.insertAdjacentHTML('beforeend', `
     <div class="detailed">
         <button class="detailed-close"></button>
