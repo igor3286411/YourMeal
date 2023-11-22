@@ -214,6 +214,7 @@ main nav button.active {
 }
 .basket-and-menu .basket__center-order-name {
   display: flex;
+  align-items: flex-start;
 }
 .basket-and-menu .basket__center-order-name img {
   width: 64px;

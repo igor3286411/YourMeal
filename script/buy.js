@@ -18,7 +18,8 @@ const renderSubmitForm = (name) => {
     deliverySection.querySelector('.delivery').style.alignItems = 'center'
     deliverySection.querySelector('.delivery').style.justifyContent = 'center'
     deliverySection.querySelector('.delivery').style.textAlign = 'center'
-    deliveryForm.querySelector('h2').style.fontSize = '50px'
+    deliverySection.querySelector('.delivery').style.display = 'flex'
+    deliveryForm.querySelector('h2').style.fontSize = '30px'
     deliveryForm.querySelector('h2').textContent = `Спасибо, ${name}. Ваш заказ принят`
 }
 

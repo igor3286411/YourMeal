@@ -95,7 +95,7 @@ const menuOrder = {
     },
     hotDogs: {
         301: {
-            name: 'Домашний',
+            name: 'Домашний хот-дог',
             price: 290,
             weight: 250,
             src: './images/menu/hotDog1.jpg',
@@ -105,7 +105,7 @@ const menuOrder = {
             calories: 380,
         },
         302: {
-            name: 'Жгучий',
+            name: 'Жгучий хот-дог',
             price: 239,
             weight: 245,
             src: './images/menu/hotDog2.jpg',
@@ -115,7 +115,7 @@ const menuOrder = {
             calories: 350,
         },
         303: {
-            name: 'Классический',
+            name: 'Классический хот-дог',
             price: 220,
             weight: 215,
             src: './images/menu/hotDog3.jpg',
