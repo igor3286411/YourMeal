@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="./css/styly.css">
     <script type="module" src="./script/menu-html.js" defer></script>
     <script src="./script/basket.js" defer></script>
-    <script src="./script/arrange.js" defer></script>
+    <script type="module" src="./script/detailed.js" defer></script>
+    <script src="./script/buy.js" defer></script>
 </head>
 
 <body>
@@ -32,15 +33,19 @@
     <main>
         <div class="container">
             <nav>
-                <button class="active"><img src="./images/cheeseburger.svg" alt="Бургеры">Бургеры</button>
-                <button><img src="./images/onion.svg" alt="Закуски">Закуски</button>
-                <button><img src="./images/hotdog.svg" alt="Хот-доги">Хот-доги</button>
+                <button data-name-menu="hamburgers" data-name-menu-ru="Бургеры" class="active"><img data-name-menu="hamburgers" data-name-menu-ru="Бургеры" class="hamburgers"
+                        src="./images/cheeseburger.svg" alt="Бургеры">Бургеры</button>
+                <button data-name-menu="snacks" data-name-menu-ru="Закуски"><img data-name-menu="snacks" data-name-menu-ru="Закуски" class="snacks" src="./images/onion.svg"
+                        alt="Закуски">Закуски</button>
+                <button data-name-menu="hotDogs" data-name-menu-ru="Хот-доги"><img data-name-menu="hotDogs" data-name-menu-ru="Хот-доги" class="hotDogs" src="./images/hotdog.svg"
+                        alt="Хот-доги">Хот-доги</button>
             </nav>
             <section class="basket-and-menu">
                 <div class="basket">
                     <div class="basket__top">
                         <h2>Корзина</h2>
-                        <div>0</div>
+                        <div class="basket__top-num">0</div>
+                        <button class="basket__top-button-close"></button>
                     </div>
                     <div class="basket__order">
                         <div class="basket__center-text">
@@ -75,15 +80,16 @@
                         <button class="delivery__form-close"></button>
                         <form>
                             <div class="delivery__form-pickup">
-                                <input type="text" placeholder="Ваше имя">
-                                <input type="number" placeholder="Телефон">
+                                <input required type="text" class="delivery__form-pickup-input-name" placeholder="Ваше имя">
+                                <input required type="number" placeholder="Телефон">
                             </div>
                             <div class="delivery__form-radio">
-                                <label class="delivery__form-radio-pickup"><input class="delivery__form-radio-pickup"
-                                        name="pickup" type="radio" value="pickup" checked>Самовывоз</label>
+                                <label class="delivery__form-radio-pickup">
+                                    <input class="delivery__form-radio-pickup" name="pickup" type="radio"
+                                        checked>Самовывоз</label>
                                 <label class="delivery__form-radio-delivery"><input
-                                        class="delivery__form-radio-delivery" name="pickup" type="radio"
-                                        value="delivery">Доставка</label>
+                                        class="delivery__form-radio-delivery" name="pickup"
+                                        type="radio">Доставка</label>
                             </div>
                             <div class="delivery__form-pickup deliverytis">
                                 <p><input type="text" placeholder="Улица, дом, квартира"></p>
@@ -92,10 +98,12 @@
                                     <input class="delivery__form-floor-intercom" type="number" placeholder="Домофон">
                                 </p>
                             </div>
-                            <button>Оформить</button>
+                            <button type="submit">Оформить</button>
                         </form>
                     </div>
                 </div>
+            </section>
+            <section class="detailed-section delivery-section">
             </section>
         </div>
     </main>

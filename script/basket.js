@@ -5,8 +5,10 @@ const basketQuantity = document.querySelector('.basket__top div')
 const basketSumPrice = document.querySelector('.basket__bottom-sum div')
 const buttonBuy = document.querySelector('.basket__bottom .basket__bottom-sum-button')
 const buttonBuyActive = document.querySelector('.basket__bottom-sum-button-active')
-
-
+const basketOrderMobile = document.querySelector('.basket__order')
+const basketMobile = document.querySelector('.basket__top')
+const basketCloseMobile = document.querySelector('.basket__top-button-close')
+const basketMobileAdaptiv = document.querySelector('.basket')
 
 let basketMenu = []
 
@@ -76,7 +78,6 @@ const quantityAndSumPrice = (orders) => {
     })
     basketQuantity.textContent = quantity
     basketSumPrice.textContent = `${price} ₽`
-
 }
 
 menu.addEventListener('click', (event) => {
@@ -84,7 +85,6 @@ menu.addEventListener('click', (event) => {
     if (click.matches('button')) {
         basketTextNoneOrder.textContent = ''
         basketMenuPush(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), 1)
-        // renderOrderInBasket(click.getAttribute('data-name'), click.getAttribute('data-price'), click.getAttribute('data-weight'), click.getAttribute('data-scr'), click.getAttribute('data-order-id'), 1)
         quantityAndSumPrice(basketMenu)
         buttonBuy.style.display = 'none'
         buttonBuyActive.style.display = 'block'
@@ -107,6 +107,26 @@ basket.addEventListener('click', (event) => {
         quantityAndSumPrice(basketMenu)
     }
 })
+
+const openAndCloseMobileOrder = (disley, px, borderRadius1, borderRadius2) => {
+    basketOrderMobile.style.display = `${disley}`
+    basketCloseMobile.style.display = `${disley}`
+    basketQuantity.style.marginRight = `${px}px`
+    basketOrderMobile.style.borderRadius = borderRadius1
+    basketMobileAdaptiv.style.borderRadius = borderRadius2
+}
+
+
+if (window.innerWidth <= 1014) {
+    window.addEventListener('click', (e) => {
+        if (e.target.closest('.basket__top')) {
+            openAndCloseMobileOrder('block', 20, '0 0 18px 18px', '18px 18px 0 0')
+        }
+        if (e.target === basketCloseMobile) {
+            openAndCloseMobileOrder('none', 0, '18px', '18px')
+        }
+    })
+}
 
 
 if (localStorage.getItem('basketOrder')) {
