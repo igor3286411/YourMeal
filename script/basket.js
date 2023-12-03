@@ -118,7 +118,7 @@ const openAndCloseMobileOrder = (disley, px, borderRadius1, borderRadius2) => {
 
 
 if (window.innerWidth <= 1014) {
-    window.addEventListener('click', (e) => {
+    window.addEventListener('touchend', (e) => {
         if (e.target.closest('.basket__top')) {
             openAndCloseMobileOrder('block', 20, '0 0 18px 18px', '18px 18px 0 0')
         }
